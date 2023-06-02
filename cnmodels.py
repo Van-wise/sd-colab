@@ -20,7 +20,7 @@ def download(url, model_dir):
         print(f"[1;32mThe model {filename} already exists[0m")
 
 def cndown_colab():
-    os.system(f"curl -o CN_models.txt https://raw.githubusercontent.com/Van-wise/sd-webui-colab/main/on_drive/cndown_colab.txt")
+    os.system(f"curl -o CN_models.txt https://raw.githubusercontent.com/Van-wise/sd-colab/main/cndown_colab.txt")
     mdldir = f"{webui_dir}/extensions/sd-webui-controlnet/models"
 
     if os.path.exists("CN_models.txt"):
@@ -35,7 +35,7 @@ def cndown_colab():
         clear_output()
 
 def cndown_drive():
-    os.system(f"curl -o CN_models.txt https://raw.githubusercontent.com/Van-wise/sd-webui-colab/main/on_drive/cndown_colab.txt")
+    os.system(f"curl -o CN_models.txt https://raw.githubusercontent.com/Van-wise/sd-colab/main/cndown_colab.txt")
     mdldir = f"{gwebui_dir}/extensions/sd-webui-controlnet/models"
 
     if os.path.exists("CN_models.txt"):
