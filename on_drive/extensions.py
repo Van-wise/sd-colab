@@ -61,6 +61,12 @@ os.system(f"rm -rf {gwebui_dir}/extensions/{sdw}-localization-zh_CN")
 os.system(f"git clone https://github.com/dtlnor/{sdw}-localization-zh_CN {gwebui_dir}/extensions/{sdw}-localization-zh_CN")
 os.system(f"git -C {gwebui_dir}/extensions/{sdw}-localization-zh_CN reset --hard && git -C {gwebui_dir}/extensions/{sdw}-localization-zh_CN pull")
 
+#lycoris
+os.chdir(gwebui_dir)
+os.system(f"rm -rf {gwebui_dir}/extensions/a1111-{w}-lycoris")
+os.system(f"git clone https://github.com/KohakuBlueleaf/a1111-{w}-lycoris {gwebui_dir}/extensions/a1111-{w}-lycoris")
+os.system(f"git -C {gwebui_dir}/extensions/a1111-{w}-lycoris reset --hard && git -C {gwebui_dir}/extensions/a1111-{w}-lycoris pull")
+
 # config.json
 if not os.path.isfile(f"{gwebui_dir}/config.json"):
     os.system(f"wget -O {gwebui_dir}/config.json https://jihulab.com/vanwise/{w}-colab/-/raw/main/config.json")
