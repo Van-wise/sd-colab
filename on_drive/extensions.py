@@ -40,11 +40,6 @@ os.system(f"rm -rf {gwebui_dir}/extensions/batchlinks-webui")
 os.system(f"git clone https://github.com/etherealxx/batchlinks-webui {gwebui_dir}/extensions/batchlinks-webui")
 os.system(f"git -C {gwebui_dir}/extensions/batchlinks-webui reset --hard && git -C {gwebui_dir}/extensions/batchlinks-webui pull")
 
-# sdw-catppuccin
-os.system(f"rm -rf {gwebui_dir}/extensions/{sdw}-catppuccin")
-os.system(f"git clone https://github.com/camenduru/{sdw}-catppuccin {gwebui_dir}/extensions/{sdw}-catppuccin")
-os.system(f"git -C {gwebui_dir}/extensions/{sdw}-catppuccin reset --hard && git -C {gwebui_dir}/extensions/{sdw}-catppuccin pull")
-
 # sdw-wd14-tagger
 os.system(f"rm -rf {gwebui_dir}/extensions/{sdw}-wd14-tagge")
 os.system(f"git clone https://github.com/toriato/{sdw}-wd14-tagger {gwebui_dir}/extensions/{sdw}-wd14-tagge")
