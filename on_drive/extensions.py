@@ -11,14 +11,14 @@ os.system(f"git clone https://github.com/deforum-art/deforum-for-automatic1111-w
 os.system(f"git -C {gwebui_dir}/extensions/deforum-for-automatic1111-webui reset --hard && git -C {gwebui_dir}/extensions/deforum-for-automatic1111-webui pull")
 
 # images-browser
-os.system(f"rm -rf {gwebui_dir}/extensions/{sdw}-images-browser")
-os.system(f"git clone https://github.com/camenduru/{sdw}-images-browser {gwebui_dir}/extensions/{sdw}-images-browser")
-os.system(f"git -C {gwebui_dir}/extensions/{sdw}-images-browser reset --hard && git -C {gwebui_dir}/extensions/{sdw}-images-browser pull")
+os.system(f"rm -rf {gwebui_dir}/extensions/{w}-infinite-image-browsing")
+os.system(f"git clone https://github.com/zanllp/{w}-infinite-image-browsing {gwebui_dir}/extensions/{w}-infinite-image-browsing")
+os.system(f"git -C {gwebui_dir}/extensions/{w}-infinite-image-browsing reset --hard && git -C {gwebui_dir}/extensions/{w}-infinite-image-browsing pull")
 
-# {w}-additional-networks
-os.system(f"rm -rf {gwebui_dir}/extensions/{w}-additional-networks")
-os.system(f"git clone https://github.com/kohya-ss/{w}-additional-networks {gwebui_dir}/extensions/{w}-additional-networks")
-os.system(f"git -C {gwebui_dir}/extensions/{w}-additional-networks reset --hard && git -C {gwebui_dir}/extensions/{w}-additional-networks pull")
+# {w}-additional-networks ·暂时失效
+#os.system(f"rm -rf {gwebui_dir}/extensions/{w}-additional-networks")
+#os.system(f"git clone https://github.com/kohya-ss/{w}-additional-networks {gwebui_dir}/extensions/{w}-additional-networks")
+#os.system(f"git -C {gwebui_dir}/extensions/{w}-additional-networks reset --hard && git -C {gwebui_dir}/extensions/{w}-additional-networks pull")
 
 # {w}-controlnet
 os.system(f"rm -rf {gwebui_dir}/extensions/{w}-controlnet")
@@ -57,10 +57,10 @@ os.system(f"git -C {gwebui_dir}/extensions/{w}-prompt-all-in-one reset --hard &&
 
 # sdw-localization-zh_CN
 os.chdir(gwebui_dir)
-os.system(f"rm -rf {gwebui_dir}/extensions/{sdw}-localization-zh_CN")
-os.system(f"git clone https://github.com/dtlnor/{sdw}-localization-zh_CN {gwebui_dir}/extensions/{sdw}-localization-zh_CN")
-os.system(f"git -C {gwebui_dir}/extensions/{sdw}-localization-zh_CN reset --hard && git -C {gwebui_dir}/extensions/{sdw}-localization-zh_CN pull")
+os.system(f"rm -rf {gwebui_dir}/extensions/{sdw}-localization-zh_Hans")
+os.system(f"git clone https://github.com/hanamizuki-ai/{sdw}-localization-zh_Hans {gwebui_dir}/extensions/{sdw}-localization-zh_Hans")
+os.system(f"git -C {gwebui_dir}/extensions/{sdw}-localization-zh_Hans reset --hard && git -C {gwebui_dir}/extensions/{sdw}-localization-zh_Hans pull")
 
 # config.json
 if not os.path.isfile(f"{gwebui_dir}/config.json"):
-    os.system(f"wget -O {gwebui_dir}/config.json https://jihulab.com/vanwise/{w}-colab/-/raw/main/config.json")
+    os.system(f"wget -O {gwebui_dir}/config.json https://raw.githubusercontent.com/Van-wise/sd-colab/main/fast/config.json")

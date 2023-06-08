@@ -62,7 +62,7 @@
     "training_enable_tensorboard": false,
     "training_tensorboard_save_images": false,
     "training_tensorboard_flush_every": 120,
-    "sd_model_checkpoint": "real-max-v3.4.safetensors [80517bc7f3]",
+    "sd_model_checkpoint": "real-max-v3.4.safetensors",
     "sd_checkpoint_cache": 0,
     "sd_vae_checkpoint_cache": 0,
     "sd_vae": "vae-ft-mse-840000-ema-pruned.safetensors",
