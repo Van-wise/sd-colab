@@ -5,9 +5,8 @@ import subprocess
 from urllib.parse import urlparse
 from IPython.display import clear_output
 
-sdw = base64.b64decode(("c3RhYmxlLWRpZmZ1c2lvbi13ZWJ1aQ==").encode('ascii')).decode('ascii')
-webui_dir = f'/content/{sdw}'
-gwebui_dir = f'/content/drive/MyDrive/{sdw}'
+webui_dir = '/content/sd'
+gwebui_dir = '/content/drive/MyDrive/sd'
 
 def download(url, model_dir):
     filename = os.path.basename(urlparse(url).path)
