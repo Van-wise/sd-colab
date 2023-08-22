@@ -1,0 +1,6 @@
+https://huggingface.co/ckpt/controlnet-sdxl-1.0/resolve/main/control-lora-depth-rank128.safetensors
+https://huggingface.co/ckpt/controlnet-sdxl-1.0/resolve/main/control-lora-depth-rank256.safetensors
+https://huggingface.co/ckpt/controlnet-sdxl-1.0/resolve/main/control-lora-recolor-rank128.safetensors
+https://huggingface.co/ckpt/controlnet-sdxl-1.0/resolve/main/control-lora-recolor-rank256.safetensors
+https://huggingface.co/ckpt/controlnet-sdxl-1.0/resolve/main/control-lora-sketch-rank128-metadata.safetensors
+https://huggingface.co/ckpt/controlnet-sdxl-1.0/resolve/main/control-lora-sketch-rank256.safetensors
