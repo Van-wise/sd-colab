@@ -19,7 +19,7 @@ def download(url, model_dir):
         print(f"[1;32mThe model {filename} already exists[0m")
 
 def cndown_sd15_colab():
-    os.system(f"curl -o CN_models.txt https://raw.githubusercontent.com/Van-wise/sd-colab/main/cndown_colab.txt")
+    os.system(f"curl -o CN_models.txt https://raw.githubusercontent.com/Van-wise/sd-colab/main/sdxl/cnDL_sd15.txt")
     mdldir = f"{webui_dir}/extensions/sd-controlnet/models"
 
     if os.path.exists("CN_models.txt"):
@@ -34,7 +34,7 @@ def cndown_sd15_colab():
         clear_output()
 
 def cndown_sd15_drive():
-    os.system(f"curl -o CN_models.txt https://raw.githubusercontent.com/Van-wise/sd-colab/main/cndown_colab.txt")
+    os.system(f"curl -o CN_models.txt https://raw.githubusercontent.com/Van-wise/sd-colab/main/sdxl/cnDL_sd15.txt")
     mdldir = f"{gwebui_dir}/extensions/sd-controlnet/models"
 
     if os.path.exists("CN_models.txt"):
@@ -49,7 +49,7 @@ def cndown_sd15_drive():
         clear_output()
 
 def cndown_sdxl_colab():
-    os.system(f"curl -o CN_models.txt https://raw.githubusercontent.com/Van-wise/sd-colab/main/cndown_colab.txt")
+    os.system(f"curl -o CN_models.txt https://raw.githubusercontent.com/Van-wise/sd-colab/main/sdxl/cnDL_sdxl.txt")
     mdldir = f"{webui_dir}/extensions/sd-controlnet/models"
 
     if os.path.exists("CN_models.txt"):
@@ -64,7 +64,7 @@ def cndown_sdxl_colab():
         clear_output()
 
 def cndown_sdxl_drive():
-    os.system(f"curl -o CN_models.txt https://raw.githubusercontent.com/Van-wise/sd-colab/main/cndown_colab.txt")
+    os.system(f"curl -o CN_models.txt https://raw.githubusercontent.com/Van-wise/sd-colab/main/sdxl/cnDL_sdxl.txt")
     mdldir = f"{gwebui_dir}/extensions/sd-controlnet/models"
 
     if os.path.exists("CN_models.txt"):
