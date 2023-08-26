@@ -257,9 +257,7 @@
     "lora_hide_unknown_for_versions": [],
     "keyedit_move": true,
     "disable_token_counters": false,
-    "extra_options": [
-        "CLIP_stop_at_last_layers"
-    ],
+    "extra_options": [],
     "extra_options_accordion": false,
     "add_user_name_to_info": false,
     "infotext_styles": "Apply if any",
