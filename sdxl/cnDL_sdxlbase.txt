@@ -1,0 +1,7 @@
+https://huggingface.co/ckpt/controlnet-sdxl-1.0/resolve/main/control-lora-depth-rank256.safetensors
+https://huggingface.co/ckpt/controlnet-sdxl-1.0/resolve/main/control-lora-recolor-rank256.safetensors
+https://huggingface.co/ckpt/controlnet-sdxl-1.0/resolve/main/control-lora-sketch-rank256.safetensors
+https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/t2i-adapter_xl_canny.safetensors
+https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/t2i-adapter_xl_openpose.safetensors
+https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/t2i-adapter_xl_sketch.safetensors
+https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/sargezt_xl_softedge.safetensors
