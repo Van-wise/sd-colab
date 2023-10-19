@@ -108,13 +108,13 @@ sd-1/controlnet/ip2p:
    recommended: False
 sd-1/embedding/EasyNegative:
    path: https://huggingface.co/embed/EasyNegative/resolve/main/EasyNegative.safetensors
-   recommended: False
+   recommended: True
 sd-1/embedding/ahx-beta-453407d:
    repo_id: sd-concepts-library/ahx-beta-453407d
    recommended: False
 sd-1/lora/LowRA:
    path: https://civitai.com/api/download/models/63006
-   recommended: True
+   recommended: False
 sd-1/lora/Ink scenery:
    path: https://civitai.com/api/download/models/83390
    recommended: False
