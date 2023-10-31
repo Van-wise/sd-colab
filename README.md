@@ -3,7 +3,9 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Van-wise/sd-colab/blob/main/on_drive/fast_sdwebui_on_drive.ipynb)  drive
 
 ---
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Van-wise/sd-colab/blob/main/Invoke/IAekovnI_colab.ipynb)  invoke AI
+**invoke AI**
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Van-wise/sd-colab/blob/main/Invoke/IAekovnI_colab.ipynb)
+---
 
 https://github.com/camenduru/stable-diffusion-webui-colab
 
