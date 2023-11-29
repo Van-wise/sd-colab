@@ -235,124 +235,6 @@ def start_mod(mod_link,mod_path,modelr_dir):
                 print(f"第{index+1}行下载错误:", e)
     print("MOD运行完成...🎉")
 #---
-import requests
-from urllib.parse import unquote
-import subprocess
-
-def re_officialdm(dm_links):
-    dm_path = f"/content/Fooocus/modules/config.py"
-    subprocess.run(["rm", "-rf", dm_path])
-    subprocess.run(["wget", "https://raw.githubusercontent.com/lllyasviel/Fooocus/main/modules/config.py", "-O", dm_path])
-
-    with open(dm_path, 'r') as file:
-        file_content = file.read()
-
-    response = requests.get(dm_links, stream=True)
-    if response.status_code == 200:
-        content_disposition = response.headers.get('content-disposition')
-        if content_disposition:
-            file_name = unquote(content_disposition.split('filename=')[1])
-        else:
-            file_name = unquote(dm_links.split("/")[-1])
-        dm_name = re.sub(r'[";]','', file_name)
-    else:
-        dm_name = "models.safetensors"
-    new_content = file_content.replace('juggernautXL_version6Rundiffusion.safetensors', dm_name)
-    new_content = new_content.replace(f'https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/{dm_name}', dm_links)
-
-    with open(dm_path, 'w') as file:
-        file.write(new_content)
-
-def re_mredm(dm_links):
-    dm_path = f"/content/Fooocus-MRE/modules/path.py"
-    la_path = f"/content/Fooocus-MRE/launch.py"
-    subprocess.run(["rm", "-rf", dm_path, "&&", "rm", "-rf", la_path])
-    subprocess.run(["wget", "https://raw.githubusercontent.com/MoonRide303/Fooocus-MRE/moonride-main/modules/path.py", "-O", dm_path])
-    subprocess.run(["wget", "https://raw.githubusercontent.com/MoonRide303/Fooocus-MRE/moonride-main/launch.py","-O", la_path])
-
-    response = requests.get(dm_links, stream=True)
-    if response.status_code == 200:
-        content_disposition = response.headers.get('content-disposition')
-        if content_disposition:
-            file_name = unquote(content_disposition.split('filename=')[1])
-        else:
-            file_name = unquote(dm_links.split("/")[-1])
-        dm_name = re.sub(r'[";]','', file_name)
-    else:
-        dm_name = "models.safetensors"
-
-    with open(dm_path, 'r') as file:
-        file_content = file.read()
-    new_content = file_content.replace('sd_xl_base_1.0_0.9vae.safetensors', dm_name)
-    with open(dm_path, 'w') as file:
-        file.write(new_content)
-
-    with open(la_path, 'r') as file:
-        file_content = file.read()
-    new_content = file_content.replace('sd_xl_base_1.0_0.9vae.safetensors', dm_name)
-    new_content = new_content.replace(f'https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/{dm_name}', dm_links)
-    with open(la_path, 'w') as file:
-        file.write(new_content)
-    
-def re_ruineddm(dm_links):
-    dm_path = f"/content/RuinedFooocus/modules/path.py"
-    la_path = f"/content/RuinedFooocus/launch.py"
-    subprocess.run(["rm", "-rf", dm_path, "&&", "rm", "-rf", la_path])
-    subprocess.run(["wget", "https://raw.githubusercontent.com/runew0lf/RuinedFooocus/main/modules/path.py", "-O", dm_path])
-    subprocess.run(["wget", "https://raw.githubusercontent.com/runew0lf/RuinedFooocus/main/launch.py","-O", la_path])
-    
-    response = requests.get(dm_links, stream=True)
-    if response.status_code == 200:
-        content_disposition = response.headers.get('content-disposition')
-        if content_disposition:
-            file_name = unquote(content_disposition.split('filename=')[1])
-        else:
-            file_name = unquote(dm_links.split("/")[-1])
-        dm_name = re.sub(r'[";]','', file_name)
-    else:
-        dm_name = "models.safetensors"
-
-    with open(dm_path, 'r') as file:
-        file_content = file.read()
-    new_content = file_content.replace('sd_xl_base_1.0_0.9vae.safetensors', dm_name)
-    with open(dm_path, 'w') as file:
-        file.write(new_content)
-
-    with open(la_path, 'r') as file:
-        file_content = file.read()
-    new_content = file_content.replace('sd_xl_base_1.0_0.9vae.safetensors', dm_name)
-    new_content = new_content.replace(f'https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/{dm_name}', dm_links)
-    with open(la_path, 'w') as file:
-        file.write(new_content)
-
-def set_default_models(_version,default_models,dm_links):
-    if _version == "Fooocus":
-        if default_models == "\u81EA\u5B9A\u4E49":
-            re_officialdm(dm_links)
-        elif default_models == "realistic" or "anime":
-            return f"--preset {default_models}"
-    elif _version in ["Fooocus-MRE", "RuinedFooocus"]:
-        if default_models == "\u81EA\u5B9A\u4E49":
-            if _version == "Fooocus-MRE":
-                re_mredm(dm_links)
-            else:
-                re_ruineddm(dm_links)
-        else:
-            if default_models == "juggernautXL":
-                dm_links = "https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/juggernautXL_version6Rundiffusion.safetensors"
-            elif default_models == "realistic":
-                dm_links = "https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/realisticStockPhoto_v10.safetensors"
-            elif default_models == "anime":
-                dm_links = "https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/bluePencilXL_v050.safetensors"
-
-            if _version == "Fooocus-MRE":
-                re_mredm(dm_links)
-            else:
-                re_ruineddm(dm_links)
-
-#presets/default.json
-#"default_model": "juggernautXL_version6Rundiffusion.safetensors",
-
 def set_default_ckpt(main_dir, ckpt_link):
     dm_path = f"{main_dir}/presets/default.json"
 
@@ -378,3 +260,17 @@ def set_default_loars(main_dir, loars_link):
     new_content = file_content.replace('sd_xl_offset_example-lora_1.0.safetensors', models_name)
     with open(dm_path, 'w') as file:
         file.write(new_content)
+#---
+def fix_fooocus_expansion(main_dir):
+    file_names = ["config.json",
+                "merges.txt",
+                "positive.txt",
+                "special_tokens_map.json",
+                "tokenizer.json",
+                "tokenizer_config.json",
+                "vocab.json"]
+
+    expansion_dir = f"{main_dir}/models/prompt_expansion/fooocus_expansion"
+    for file_name in file_names:
+        url = "https://github.com/lllyasviel/Fooocus/raw/main/models/prompt_expansion/fooocus_expansion/" + file_name
+        os.system(f"aria2c --console-log-level=error -q -c -x 16 -s 16 -k 1M -d {expansion_dir} -o {file_name} {url}")
