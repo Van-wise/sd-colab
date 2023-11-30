@@ -4,8 +4,10 @@
 
 ---
 ### **invoke AI**
-
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Van-wise/sd-colab/blob/main/Invoke/IAekovnI_colab.ipynb)
+---
+### **fooocus**
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Van-wise/sd-colab/blob/main/fooocus/fcoooucs.ipynb)
 ---
 
 https://github.com/camenduru/stable-diffusion-webui-colab
