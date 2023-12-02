@@ -8,6 +8,9 @@
 ---
 ### [Fcoooucs](https://github.com/lllyasviel/Fooocus)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Van-wise/sd-colab/blob/main/fooocus/fcoooucs.ipynb)
+---
+### [VoltaML](https://github.com/VoltaML/voltaML-fast-stable-diffusion)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Van-wise/sd-colab/blob/main/voltaml/voltaml.ipynb)
 
 ---
 https://github.com/camenduru/stable-diffusion-webui-colab
