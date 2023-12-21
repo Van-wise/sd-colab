@@ -274,3 +274,11 @@ def fix_fooocus_expansion(main_dir):
     for file_name in file_names:
         url = "https://github.com/lllyasviel/Fooocus/raw/main/models/prompt_expansion/fooocus_expansion/" + file_name
         os.system(f"aria2c --console-log-level=error -q -c -x 16 -s 16 -k 1M -d {expansion_dir} -o {file_name} {url}")
+
+def fix_fooocus_ripemd160(main_dir):
+    tokendid_dir = f"{main_dir}/enhanced/token_did.py"
+    with open(tokendid_dir, 'r') as file:
+        file_content = file.read() 
+    new_content = file_content.replace("ripemd160", "sha256")
+    with open(tokendid_dir, 'w') as file:
+        file.write(new_content)        
