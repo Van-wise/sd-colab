@@ -282,3 +282,17 @@ def fix_fooocus_ripemd160(main_dir):
     new_content = file_content.replace("ripemd160", "sha256")
     with open(tokendid_dir, 'w') as file:
         file.write(new_content)        
+        
+def fix_fooocus_clip(main_dir):
+    clip_dir = f"{main_dir}/ldm_patched/modules/sd1_clip.py"
+    with open(clip_dir, 'r') as file:
+        file_content = file.read()
+    new_content = file_content.replace("transformers", "transformers.models.clip")
+    with open(clip_dir, 'w') as file:
+        file.write(new_content)
+
+
+#async_gradio_app.local_url = 'http://127.0.0.1:7865/'
+
+
+
