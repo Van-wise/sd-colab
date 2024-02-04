@@ -31,15 +31,15 @@ def add_model(name, url, path):
     models.append(model)
 
 def add_juggernautxl(main_dir):
-    add_model("juggernautXL_version6Rundiffusion.safetensors", "https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/juggernautXL_version6Rundiffusion.safetensors", f"{main_dir}/models/checkpoints/") 
+    add_model("juggernautXL_v8Rundiffusion.safetensors", "https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/juggernautXL_v8Rundiffusion.safetensors", f"{main_dir}/models/checkpoints/") 
     add_model("sd_xl_offset_example-lora_1.0.safetensors", "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_offset_example-lora_1.0.safetensors", f"{main_dir}/models/loras/")
 
 def add_realistic(main_dir):
-    add_model("realisticStockPhoto_v10.safetensors", "https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/realisticStockPhoto_v10.safetensors", f"{main_dir}/models/checkpoints/")
+    add_model("realisticStockPhoto_v20.safetensors", "https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/realisticStockPhoto_v20.safetensors", f"{main_dir}/models/checkpoints/")
     add_model("SDXL_FILM_PHOTOGRAPHY_STYLE_BetaV0.4.safetensors", "https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/SDXL_FILM_PHOTOGRAPHY_STYLE_BetaV0.4.safetensors", f"{main_dir}/models/loras/")
 
 def add_anime(main_dir):
-    add_model("bluePencilXL_v050.safetensors", "https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/bluePencilXL_v050.safetensors", f"{main_dir}/models/checkpoints/")
+    add_model("animaPencilXL_v100.safetensors", "https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/animaPencilXL_v100.safetensors", f"{main_dir}/models/checkpoints/")
     add_model("DreamShaper_8_pruned.safetensors", "https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/DreamShaper_8_pruned.safetensors", f"{main_dir}/models/checkpoints/")
     add_model("sd_xl_offset_example-lora_1.0.safetensors", "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_offset_example-lora_1.0.safetensors", f"{main_dir}/models/loras/")
     add_model("unaestheticXLv31.safetensors", "https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/unaestheticXLv31.safetensors", f"{main_dir}/models/embeddings/")
@@ -244,7 +244,7 @@ def set_default_ckpt(main_dir, ckpt_link):
 
     with open(dm_path, 'r') as file:
         file_content = file.read()
-    new_content = file_content.replace('juggernautXL_version6Rundiffusion.safetensors', models_name)
+    new_content = file_content.replace('juggernautXL_v8Rundiffusion.safetensors', models_name)
     with open(dm_path, 'w') as file:
         file.write(new_content)
 
