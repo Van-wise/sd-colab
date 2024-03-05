@@ -17,3 +17,9 @@ https://github.com/camenduru/stable-diffusion-webui-colab
 
 https://github.com/TheLastBen/fast-stable-diffusion
 
+https://github.com/s4afa451dgf415f/colab_stable_diffusion
+
+https://www.kaggle.com/code/qq2575044704/stable-diffusion-webui-novelai-edited-version-2
+
+
+
