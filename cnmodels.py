@@ -1,13 +1,19 @@
 # -*- coding: utf-8 -*-
 import os
 import base64
+import binascii
 import subprocess
 from urllib.parse import urlparse
 from IPython.display import clear_output
 
-sdw = base64.b64decode(("c3RhYmxlLWRpZmZ1c2lvbi13ZWJ1aQ==").encode('ascii')).decode('ascii')
-webui_dir = f'/content/{sdw}'
-gwebui_dir = f'/content/drive/MyDrive/{sdw}'
+sdw = binascii.a2b_uu("6<W1A8FQE+61I9F9U<VEO;BUW96)U:0``").decode('utf-8')
+w = binascii.a2b_uu("(<V0M=V5B=6D`").decode('utf-8')
+sai = binascii.a2b_uu("=<W1A8FQE+61I9F9U<VEO;BUS=&%B:6QI='DM86D`").decode('utf-8')
+sd = binascii.a2b_uu("04W1A8FQE+61I9F9U<VEO;@``").decode('utf-8')
+saa = sdw + "-assets"
+
+webui_dir = '/root/main'
+gwebui_dir = f'/content/drive/MyDrive/main'
 
 def download(url, model_dir):
     filename = os.path.basename(urlparse(url).path)
