@@ -46,16 +46,20 @@ def fix_py312(main_dir):
         return
     file_path = f"{main_dir}/requirements/pytorch.txt"
     with open(file_path, 'r') as file:
-        c = file.read()
-    c = c.replace("scipy==1.10.1", "scipy>=1.11.0")
-    c = c.replace("opencv-contrib-python-headless==4.7.0.72", "opencv-contrib-python-headless>=4.8.0.74")
-    c = c.replace("tokenizers==0.15.0", "tokenizers>=0.15.0")
-    c = c.replace("transformers==4.36.1", "transformers>=4.36.1")
-    c = c.replace("safetensors==0.4.0", "safetensors>=0.4.0")
-    c = c.replace("invisible-watermark==0.2.0", "invisible-watermark>=0.2.0")
-    c = c.replace("piexif==1.1.3", "piexif>=1.1.3")
+        lines = file.readlines()
+    new_lines = []
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith("#") or stripped.startswith("--") or not stripped:
+            new_lines.append(line)
+            continue
+        if "==" in stripped:
+            pkg = stripped.split("==")[0]
+            new_lines.append(f"{pkg}>=0\n")
+        else:
+            new_lines.append(line)
     with open(file_path, 'w') as file:
-        file.write(c)
+        file.writelines(new_lines)
     api_path = f"{main_dir}/requirements/api.txt"
     with open(api_path, 'r') as file:
         a = file.read()
