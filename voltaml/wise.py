@@ -39,10 +39,25 @@ def fix_pytorch(main_dir):
     with open(file_path, 'w') as file:
         file.write(new_content)
 
+def fix_py312(main_dir):
+    import platform
+    minor = int(platform.python_version_tuple()[1])
+    if minor < 12:
+        return
+    file_path = f"{main_dir}/requirements/pytorch.txt"
+    with open(file_path, 'r') as file:
+        c = file.read()
+    c = c.replace("scipy==1.10.1", "scipy>=1.11.0")
+    c = c.replace("opencv-contrib-python-headless==4.7.0.72", "opencv-contrib-python-headless>=4.8.0.74")
+    c = c.replace("tokenizers==0.15.0", "tokenizers>=0.15.0")
+    with open(file_path, 'w') as file:
+        file.write(c)
+
 def fix_colab(main_dir):
     fix_clip(main_dir)
     fix_api(main_dir)
     fix_pytorch(main_dir)
+    fix_py312(main_dir)
 
 #---
 import pandas as pd
