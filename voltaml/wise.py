@@ -50,8 +50,18 @@ def fix_py312(main_dir):
     c = c.replace("scipy==1.10.1", "scipy>=1.11.0")
     c = c.replace("opencv-contrib-python-headless==4.7.0.72", "opencv-contrib-python-headless>=4.8.0.74")
     c = c.replace("tokenizers==0.15.0", "tokenizers>=0.15.0")
+    c = c.replace("transformers==4.36.1", "transformers>=4.36.1")
+    c = c.replace("safetensors==0.4.0", "safetensors>=0.4.0")
+    c = c.replace("invisible-watermark==0.2.0", "invisible-watermark>=0.2.0")
+    c = c.replace("piexif==1.1.3", "piexif>=1.1.3")
     with open(file_path, 'w') as file:
         file.write(c)
+    api_path = f"{main_dir}/requirements/api.txt"
+    with open(api_path, 'r') as file:
+        a = file.read()
+    a = a.replace("requests==2.31.0", "requests>=2.31.0")
+    with open(api_path, 'w') as file:
+        file.write(a)
 
 def fix_colab(main_dir):
     fix_clip(main_dir)
