@@ -53,6 +53,8 @@ def fix_py312(main_dir):
         if stripped.startswith("#") or stripped.startswith("--") or not stripped:
             new_lines.append(line)
             continue
+        if "invisible-watermark" in stripped or "cpufeature" in stripped:
+            continue
         if "==" in stripped:
             pkg = stripped.split("==")[0]
             new_lines.append(f"{pkg}>=0\n")
